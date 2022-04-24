@@ -19,15 +19,13 @@ class XylophonePage extends StatefulWidget {
 
 class _XylophonePage extends State<XylophonePage> {
   static AudioCache player = AudioCache();
-  String sound = '';
 
-  void playingXylo(String sound) => {
-        setState(() => {playLocal(sound)})
+  void playingXylo(int sound) => {
+        setState(() => {playLocal('/note$sound.wav')})
       };
 
   playLocal(String sound) async {
     player.play(sound);
-    print('ich bin hier' + '  $sound');
   }
 
   @override
@@ -42,7 +40,7 @@ class _XylophonePage extends State<XylophonePage> {
                 child: Container(
                   decoration: const BoxDecoration(color: Colors.red),
                 ),
-                onTap: () => {sound = '/note1.wav', playingXylo(sound)},
+                onTap: () => {playingXylo(1)},
               ),
               flex: 1,
             ),
@@ -51,7 +49,7 @@ class _XylophonePage extends State<XylophonePage> {
                 child: Container(
                   decoration: const BoxDecoration(color: Colors.orange),
                 ),
-                onTap: () => {sound = '/note2.wav', playingXylo(sound)},
+                onTap: () => {playingXylo(2)},
               ),
               flex: 1,
             ),
@@ -60,7 +58,7 @@ class _XylophonePage extends State<XylophonePage> {
                 child: Container(
                   decoration: const BoxDecoration(color: Colors.yellow),
                 ),
-                onTap: () => {sound = '/note3.wav', playingXylo(sound)},
+                onTap: () => {playingXylo(3)},
               ),
               flex: 1,
             ),
@@ -69,7 +67,7 @@ class _XylophonePage extends State<XylophonePage> {
                 child: Container(
                   decoration: const BoxDecoration(color: Colors.green),
                 ),
-                onTap: () => {sound = '/note4.wav', playingXylo(sound)},
+                onTap: () => {playingXylo(4)},
               ),
               flex: 1,
             ),
@@ -78,7 +76,7 @@ class _XylophonePage extends State<XylophonePage> {
                 child: Container(
                   color: Colors.green.shade700,
                 ),
-                onTap: () => {sound = '/note5.wav', playingXylo(sound)},
+                onTap: () => {playingXylo(5)},
               ),
               flex: 1,
             ),
@@ -87,7 +85,7 @@ class _XylophonePage extends State<XylophonePage> {
                 child: Container(
                   color: Colors.blue,
                 ),
-                onTap: () => {sound = '/note6.wav', playingXylo(sound)},
+                onTap: () => {playingXylo(6)},
               ),
               flex: 1,
             ),
@@ -96,7 +94,7 @@ class _XylophonePage extends State<XylophonePage> {
                 child: Container(
                   color: Colors.purple,
                 ),
-                onTap: () => {sound = '/note7.wav', playingXylo(sound)},
+                onTap: () => {playingXylo(7)},
               ),
               flex: 1,
             )
