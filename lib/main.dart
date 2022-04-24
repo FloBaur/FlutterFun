@@ -25,6 +25,8 @@ class _XylophonePage extends State<XylophonePage> {
         setState(() => {playLocal(sound)})
       };
 
+
+
   playLocal(String sound) async {
     player.play(sound);
     print('ich bin hier' + '  $sound');
