@@ -28,6 +28,17 @@ class _XylophonePage extends State<XylophonePage> {
     player.play(sound);
   }
 
+  Expanded buildKey({required Color color, required int sound}) {
+    return Expanded(
+      child: InkWell(
+        //alternativ Flatbutton
+        child: Container(color: color),
+        onTap: () => {playingXylo(sound)},
+      ),
+      flex: 1,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,69 +46,13 @@ class _XylophonePage extends State<XylophonePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Expanded(
-              child: InkWell(
-                child: Container(
-                  decoration: const BoxDecoration(color: Colors.red),
-                ),
-                onTap: () => {playingXylo(1)},
-              ),
-              flex: 1,
-            ),
-            Expanded(
-              child: InkWell(
-                child: Container(
-                  decoration: const BoxDecoration(color: Colors.orange),
-                ),
-                onTap: () => {playingXylo(2)},
-              ),
-              flex: 1,
-            ),
-            Expanded(
-              child: InkWell(
-                child: Container(
-                  decoration: const BoxDecoration(color: Colors.yellow),
-                ),
-                onTap: () => {playingXylo(3)},
-              ),
-              flex: 1,
-            ),
-            Expanded(
-              child: InkWell(
-                child: Container(
-                  decoration: const BoxDecoration(color: Colors.green),
-                ),
-                onTap: () => {playingXylo(4)},
-              ),
-              flex: 1,
-            ),
-            Expanded(
-              child: InkWell(
-                child: Container(
-                  color: Colors.green.shade700,
-                ),
-                onTap: () => {playingXylo(5)},
-              ),
-              flex: 1,
-            ),
-            Expanded(
-              child: InkWell(
-                child: Container(
-                  color: Colors.blue,
-                ),
-                onTap: () => {playingXylo(6)},
-              ),
-              flex: 1,
-            ),
-            Expanded(
-              child: InkWell(
-                child: Container(
-                  color: Colors.purple,
-                ),
-                onTap: () => {playingXylo(7)},
-              ),
-              flex: 1,
-            )
+            buildKey(color: Colors.red, sound: 1),
+            buildKey(color: Colors.orange, sound: 2),
+            buildKey(color: Colors.yellow, sound: 3),
+            buildKey(color: Colors.green, sound: 4),
+            buildKey(color: Colors.teal, sound: 5),
+            buildKey(color: Colors.blue, sound: 6),
+            buildKey(color: Colors.purple, sound: 7),
           ],
         ),
       ),
